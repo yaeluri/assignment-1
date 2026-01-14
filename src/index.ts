@@ -2,6 +2,7 @@ import express, { Express } from "express";
 const app = express();
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import commentRouter from "./routes/commentRoutes";
 dotenv.config({ path: ".env.dev" });
 
 const intApp = () => {
@@ -10,7 +11,7 @@ const intApp = () => {
     app.use(express.json());
 
     // app.use("/movie", movieRoutes);
-    // app.use("/comment", commentRoutes);
+    app.use("/comment", commentRouter);
     // app.use("/auth", authRoutes);
 
     const dbUri = process.env.MONGODB_URI || "mongodb://localhost:27017";
