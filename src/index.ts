@@ -2,7 +2,7 @@ import express, { Express } from "express";
 const app = express();
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-dotenv.config({ path: ".env.dev" });
+dotenv.config({ path: ".env" });
 
 const intApp = () => {
   const promise = new Promise<Express>((resolve, reject) => {
@@ -13,7 +13,7 @@ const intApp = () => {
     // app.use("/comment", commentRoutes);
     // app.use("/auth", authRoutes);
 
-    const dbUri = process.env.MONGODB_URI || "mongodb://localhost:27017";
+    const dbUri = process.env.MONGODB_URI;
     if (!dbUri) {
       console.error("MONGODB_URI is not defined in the environment variables.");
       reject(new Error("MONGODB_URI is not defined"));
