@@ -1,17 +1,16 @@
 import express, { Express } from "express";
 const app = express();
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
+import mongoose from "mongoose";
+import postRoutes from "./routes/postRoutes";
 
 const intApp = () => {
   const promise = new Promise<Express>((resolve, reject) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
 
-    // app.use("/movie", movieRoutes);
-    // app.use("/comment", commentRoutes);
-    // app.use("/auth", authRoutes);
+    app.use("/post", postRoutes);
 
     const dbUri = process.env.MONGODB_URI;
     if (!dbUri) {
