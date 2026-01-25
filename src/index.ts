@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 import mongoose from "mongoose";
 import postRoutes from "./routes/postRoutes";
+import commentRoutes from "./routes/commentRoutes";
 
 const intApp = () => {
   const promise = new Promise<Express>((resolve, reject) => {
@@ -11,6 +12,7 @@ const intApp = () => {
     app.use(express.json());
 
     app.use("/post", postRoutes);
+    app.use("/comment", commentRoutes);
 
     const dbUri = process.env.MONGODB_URI;
     if (!dbUri) {
