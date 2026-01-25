@@ -68,3 +68,6 @@ Content-Type: application/json
 {
   "content": "Updated comment content"
 }
+
+### Delete comment
+DELETE {{baseUrl}}/comment/69762e2395f7d2656afc3223
