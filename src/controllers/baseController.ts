@@ -47,7 +47,7 @@ class BaseController {
         }
     };
 
-    async del(req: Request, res: Response) {
+    async delete(req: Request, res: Response) {
         const id = req.params.id;
         try {
             const response = await this.model.findByIdAndDelete(id);

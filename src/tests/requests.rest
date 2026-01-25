@@ -20,10 +20,10 @@ GET {{baseUrl}}/post
 GET {{baseUrl}}/post?sender=u1
 
 ### 4) Get Post By ID
-GET {{baseUrl}}/post/696ce66a5cd860e3435cc583
+GET {{baseUrl}}/post/69762c0c5f4ebadc71a7fd13
 
 ### 5) Update Post By ID
-PUT {{baseUrl}}/post/696ce66a5cd860e3435cc583
+PUT {{baseUrl}}/post/69762c0c5f4ebadc71a7fd13
 Content-Type: application/json
 
 {
@@ -32,3 +32,42 @@ Content-Type: application/json
 }
 
 
+# COMMENTS
+
+### Get all comments
+GET {{baseUrl}}/comment
+
+###
+
+### Get comments by postId
+GET {{baseUrl}}/comment?postId=69762c0c5f4ebadc71a7fd13
+
+###
+
+### Get comment by id
+GET {{baseUrl}}/comment/69762e2395f7d2656afc3223
+
+###
+
+### Create comment
+POST {{baseUrl}}/comment
+Content-Type: application/json
+
+{
+  "postId": "69762c0c5f4ebadc71a7fd13",
+  "content": "This is a comment",
+  "sender": "user456"
+}
+
+###
+
+### Update comment
+PUT {{baseUrl}}/comment/69762e2395f7d2656afc3223
+Content-Type: application/json
+
+{
+  "content": "Updated comment content"
+}
+
+### Delete comment
+DELETE {{baseUrl}}/comment/69762e2395f7d2656afc3223
