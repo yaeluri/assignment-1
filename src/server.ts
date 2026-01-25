@@ -1,6 +1,6 @@
 import intApp from "./index";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 intApp().then((app) => {
   app.listen(PORT, () => {
